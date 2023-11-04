@@ -1,30 +1,42 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <Navbar :logo="logo_src" :alt="app_name"/>
+    <router-view/>
+  <Footer/>
 </template>
+<script>
+import Footer from './components/footer/Footer.vue'
+import Navbar from './components/navbar/Navbar.vue'
 
+export default {
+  components:{
+    Navbar,
+    Footer
+  },
+  data() {
+    return {
+      logo_src:'/img/logo.png',
+      app_name:'logo monster burguer',
+    }
+  },
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+.container{
+  margin:50px;
+  min-height: 250px;
+}
+h1{
   text-align: center;
-  color: #2c3e50;
+  font-size: 42px;
+  margin-bottom: 30px;
+  color: #222;
 }
 
-nav {
-  padding: 30px;
-}
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
