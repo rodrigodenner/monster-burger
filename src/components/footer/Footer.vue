@@ -11,14 +11,5 @@
 </script>
 
 <style  scoped>
-footer{
-  background-color:#222 ;
-  color:#FCBA03;
-  height: 50px;
-  border-top: 4px solid #111;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import 'style.css'
 </style>
