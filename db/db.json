@@ -94,7 +94,7 @@
       "nome": "Rodrigo ",
       "carne": "Picanha",
       "pao": "Australiano",
-      "opicionais": [
+      "opcionais": [
         "Bacon",
         "Cheddar"
       ],
@@ -105,12 +105,54 @@
       "nome": "Rodrigo ",
       "carne": "Frango",
       "pao": "Pão de Milho",
-      "opicionais": [
+      "opcionais": [
         "Bacon",
         "Salame"
       ],
       "status": "Solicitado",
       "id": 2
+    },
+    {
+      "nome": "Adélia ",
+      "carne": "Maminha",
+      "pao": "Pretzel",
+      "opcionais": [
+        "Bacon",
+        "Salame",
+        "Tomate",
+        "Cheddar"
+      ],
+      "status": "Solicitado",
+      "id": 3
+    },
+    {
+      "nome": "Francisco Denner ",
+      "carne": "Frango",
+      "pao": "Brioche",
+      "opcionais": [],
+      "status": "Solicitado",
+      "id": 4
+    },
+    {
+      "nome": "Joaquim Denner",
+      "carne": "Picanha",
+      "pao": "Integral",
+      "opcionais": [
+        "Salame",
+        "Bacon",
+        "Cheddar",
+        "Cebola roxa"
+      ],
+      "status": "Solicitado",
+      "id": 5
+    },
+    {
+      "nome": "Vera Eunice",
+      "carne": "Picanha",
+      "pao": "Integral",
+      "opcionais": [],
+      "status": "Solicitado",
+      "id": 6
     }
   ]
 }
