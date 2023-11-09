@@ -3,19 +3,27 @@
     "paes": [
       {
         "id": 1,
-        "tipo": "Italiano Branco"
+        "tipo": "Brioche"
       },
       {
         "id": 2,
-        "tipo": "3 Queijos"
+        "tipo": "Australiano"
       },
       {
         "id": 3,
-        "tipo": "Parmesão e Orégano"
+        "tipo": "Integral"
       },
       {
         "id": 4,
-        "tipo": "Integral"
+        "tipo": "Pretzel"
+      },
+      {
+        "id": 5,
+        "tipo": "Aipim"
+      },
+      {
+        "id": 6,
+        "tipo": "Pão de Milho"
       }
     ],
     "carnes": [
@@ -34,6 +42,10 @@
       {
         "id": 4,
         "tipo": "Veggie burger"
+      },
+      {
+        "id": 5,
+        "tipo": "Frango"
       }
     ],
     "opcionais": [
@@ -81,47 +93,24 @@
     {
       "nome": "Rodrigo ",
       "carne": "Picanha",
-      "pao": "Italiano Branco",
-      "opicionais": [
-        "Salame",
-        "Bacon"
-      ],
-      "status": "Solicitado",
-      "id": 6
-    },
-    {
-      "nome": "Adélia Maria ",
-      "carne": "Alcatra",
-      "pao": "Parmesão e Orégano",
+      "pao": "Australiano",
       "opicionais": [
         "Bacon",
         "Cheddar"
       ],
       "status": "Solicitado",
-      "id": 7
+      "id": 1
     },
     {
-      "nome": "Francisco Denner ",
-      "carne": "Alcatra",
-      "pao": "Parmesão e Orégano",
-      "opicionais": [],
-      "status": "Solicitado",
-      "id": 8
-    },
-    {
-      "nome": "Joaquim Denner",
-      "carne": "Alcatra",
-      "pao": "Italiano Branco",
+      "nome": "Rodrigo ",
+      "carne": "Frango",
+      "pao": "Pão de Milho",
       "opicionais": [
-        "Pepino",
-        "Tomate",
-        "Cheddar",
-        "Cebola roxa",
-        "Salame",
-        "Bacon"
+        "Bacon",
+        "Salame"
       ],
       "status": "Solicitado",
-      "id": 9
+      "id": 2
     }
   ]
 }
