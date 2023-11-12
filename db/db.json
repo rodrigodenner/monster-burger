@@ -98,62 +98,30 @@
         "Bacon",
         "Cheddar"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 1
     },
     {
-      "nome": "Adélia ",
+      "nome": "Vera",
       "carne": "Maminha",
-      "pao": "Pretzel",
-      "opcionais": [
-        "Bacon",
-        "Salame",
-        "Tomate",
-        "Cheddar"
+      "pao": "Australiano",
+      "opicionais": [
+        "Bacon"
       ],
       "status": "Solicitado",
       "id": 3
     },
     {
-      "nome": "Francisco Denner ",
-      "carne": "Frango",
+      "nome": "Geovana ",
+      "carne": "Maminha",
       "pao": "Brioche",
-      "opcionais": [],
-      "status": "Solicitado",
-      "id": 4
-    },
-    {
-      "nome": "Joaquim Denner",
-      "carne": "Picanha",
-      "pao": "Integral",
-      "opcionais": [
-        "Salame",
-        "Bacon",
-        "Cheddar",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
-      "id": 5
-    },
-    {
-      "nome": "Vera Eunice",
-      "carne": "Picanha",
-      "pao": "Integral",
-      "opcionais": [],
-      "status": "Solicitado",
-      "id": 6
-    },
-    {
-      "nome": "Denner Vieira",
-      "carne": "Veggie burger",
-      "pao": "Aipim",
       "opicionais": [
         "Bacon",
         "Salame",
         "Cebola roxa"
       ],
       "status": "Solicitado",
-      "id": 7
+      "id": 4
     }
   ]
 }

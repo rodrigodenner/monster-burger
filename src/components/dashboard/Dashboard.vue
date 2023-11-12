@@ -17,25 +17,38 @@
         <div>{{ burger.pao }}</div>
         <div>{{ burger.carne }}</div>
         <div>
-          <div v-if="burger.opcionais && burger.opcionais.length > 0">
-            <ul>
-              <li v-for="(opcional, index) in burger.opcionais" :key="index">
-                {{ opcional }}
-              </li>
-            </ul>
-          </div>
-          <div v-else>
-            <strong>Sem opcionais</strong>
+          <div>
+            <div v-if="burger.opcionais && burger.opcionais.length > 0">
+              <ul>
+                <li v-for="(opcional, index) in burger.opcionais" :key="index">
+                  {{ opcional }}
+                </li>
+              </ul>
+            </div>
+            <div v-else>
+              <strong>Sem opcionais</strong>
+            </div>
           </div>
         </div>
         <div>
-          <select name="status" class="status">
+          <select
+            name="status"
+            class="status"
+            @change="updateStatus($event, burger.id)"
+          >
             <option value="">Status</option>
-            <option v-for="statusPedido in status" :key="statusPedido.id" :selected="burger.status == statusPedido.tipo"> 
-              {{statusPedido.tipo}} 
+            <option
+              v-for="statusPedido in status"
+              :key="statusPedido.id"
+              :velue="statusPedido.tipo"
+              :selected="burger.status == statusPedido.tipo"
+            >
+              {{ statusPedido.tipo }}
             </option>
           </select>
-          <button class="delete-btn" @click="deletePedidos(burger.id)">Cancelar</button>
+          <button class="delete-btn" @click="deletePedidos(burger.id)">
+            Cancelar
+          </button>
         </div>
       </div>
     </div>
@@ -57,25 +70,37 @@ export default {
       const req = await fetch("http://localhost:3000/burgers");
       const data = await req.json();
       this.burgers = data;
-      
+
       //Resgatando os status
       this.getStatus();
     },
-    async getStatus(){
+    async getStatus() {
       const req = await fetch("http://localhost:3000/status");
       const data = await req.json();
       this.status = data;
-
     },
-    async deletePedidos(id){
-      const req = await fetch(`http://localhost:3000/burgers/${id}`,{
-        method:"DELETE"
+    async deletePedidos(id) {
+      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        method: "DELETE",
       });
       const res = await req.json();
       //flash mesagem
 
       this.getPedidos();
-    }
+    },
+    async updateStatus(event, id) {
+      const option = event.target.value;
+
+      const dataJson = JSON.stringify({ status: option });
+      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: dataJson,
+      });
+
+      const res = await req.json();
+      console.log(res);
+    },
   },
   mounted() {
     this.getPedidos();

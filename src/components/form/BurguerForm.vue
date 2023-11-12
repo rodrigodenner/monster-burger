@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Message :msg="msg" v-show="msg"/>
     <form id="burger-form" method="POST" @submit="createBurger">
       <div class="input-container">
         <label for="nome">Nome do cliente:</label>
@@ -55,7 +56,9 @@
 </template>
 
 <script>
+import Message from '../flashMessage/Message.vue';
 export default {
+  components: { Message },
   name: "BurgerForm",
   data() {
     return {
@@ -96,17 +99,15 @@ export default {
       });
       const res = await req.json();
 
-      //colocar um msg de sistem
-
       //flash mesagem
-
+      this.msg = "Pedido realizado com sucesso";
       
       //limpar todos os campos
       (this.nome = ""),
       (this.carne = ""),
       (this.pao = ""),
-      (this.opcionais = "")
-      
+      (this.opcionais = ""),
+      (setTimeout(() => this.msg = "", 2000))
     },
   },
   mounted() {
