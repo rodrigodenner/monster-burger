@@ -89,22 +89,5 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": [
-    {
-      "nome": "Rodrigo ",
-      "carne": "Maminha",
-      "pao": "Integral",
-      "opicionais": [],
-      "status": "Solicitado",
-      "id": 9
-    },
-    {
-      "nome": "ssssss",
-      "carne": "Veggie burger",
-      "pao": "Pretzel",
-      "opicionais": [],
-      "status": "Solicitado",
-      "id": 10
-    }
-  ]
+  "burgers": []
 }

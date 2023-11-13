@@ -1,6 +1,6 @@
 <template>
   <div id="burger-table">
-    <Message :msg="msg" v-show="msg" />
+    <Message :msg="msg" :messageType="msgType" v-show="msg" />
     <div>
       <div id="burger-table-heading">
         <div class="order-id">#:</div>
@@ -68,6 +68,7 @@ export default {
       burger_id: null,
       status: [],
       msg: null,
+      msgType: null,
     };
   },
   methods: {
@@ -90,9 +91,13 @@ export default {
       });
       const res = await req.json();
 
-      //flash mesagem
-
-      this.showFlashMessage("Pedido deletado com sucesso!");
+//flash mesagem
+      const messageType = res.success ? "success" : "danger";
+      this.msgType = messageType;
+      
+      this.msgType = "success";
+        this.showFlashMessage("Pedido cancelado com sucesso!");
+      
 
       this.getPedidos();
     },
@@ -109,10 +114,13 @@ export default {
       const res = await req.json();
 
       //flash mesagem
-
-      this.showFlashMessage(
-        `Pedido Nº ${res.id} atualizado para ${res.status}!`
-      );
+      //flash mesagem
+      const messageType = res.success ? "success" : "danger";
+      this.msgType = messageType;
+      
+      this.msgType = "success";
+        this.showFlashMessage(`Pedido Nº ${res.id} atualizado para ${res.status}!`);
+      
     },
   },
   mounted() {

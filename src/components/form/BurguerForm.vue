@@ -111,7 +111,6 @@ export default {
 
       // Define o tipo de mensagem com base no sucesso ou falha da operação
       const messageType = res.success ? "success" : "danger";
-      console.log(res.success);
       this.msgType = messageType;
 
       //flash mesagem
