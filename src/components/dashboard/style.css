@@ -48,6 +48,7 @@ select {
     margin: 0 auto;
     cursor: pointer;
     transition: .5s;
+    
 }
 
 .delete-btn:hover {

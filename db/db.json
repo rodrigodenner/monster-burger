@@ -91,18 +91,6 @@
   ],
   "burgers": [
     {
-      "nome": "Rodrigo ",
-      "carne": "Picanha",
-      "pao": "Brioche",
-      "opicionais": [
-        "Bacon",
-        "Salame",
-        "Pepino"
-      ],
-      "status": "Solicitado",
-      "id": 1
-    },
-    {
       "nome": "Joaão",
       "carne": "Alcatra",
       "pao": "Integral",
@@ -140,6 +128,17 @@
       "opicionais": [],
       "status": "Solicitado",
       "id": 6
+    },
+    {
+      "nome": "Geovana ",
+      "carne": "Maminha",
+      "pao": "Integral",
+      "opicionais": [
+        "Salame",
+        "Bacon"
+      ],
+      "status": "Solicitado",
+      "id": 7
     }
   ]
 }

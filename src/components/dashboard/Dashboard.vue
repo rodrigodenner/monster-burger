@@ -19,9 +19,9 @@
         <div>{{ burger.carne }}</div>
         <div>
           <div>
-            <div v-if="burger.opcionais && burger.opcionais.length > 0">
+            <div v-if="burger.opicionais && burger.opicionais.length > 0">
               <ul>
-                <li v-for="(opcional, index) in burger.opcionais" :key="index">
+                <li v-for="(opcional, index) in burger.opicionais" :key="index">
                   {{ opcional }}
                 </li>
               </ul>
