@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Message :msg="msg" v-show="msg" />
+    <Message :msg="msg" :messageType="msgType" v-show="msg" />
     <form id="burger-form" method="POST" @submit="createBurger">
       <div class="input-container">
         <label for="nome">Nome do cliente:</label>
@@ -73,6 +73,7 @@ export default {
       carne: null,
       opcionais: [],
       msg: null,
+      msgType: null,
     };
   },
   methods: {
@@ -89,6 +90,7 @@ export default {
 
       // Verifica se todos os campos estão preenchidos
       if (!this.nome || !this.pao || !this.carne) {
+        this.msgType = "danger"; // Adicione esta linha para mensagens de perigo
         this.showFlashMessage("Por favor, preencha todos os campos.");
         return;
       }
@@ -107,14 +109,20 @@ export default {
       });
       const res = await req.json();
 
-      //flash mesagem
+      // Define o tipo de mensagem com base no sucesso ou falha da operação
+      const messageType = res.success ? "success" : "danger";
+      console.log(res.success);
+      this.msgType = messageType;
 
-      this.showFlashMessage("Pedido realizado com sucesso!");
-      //limpar todos os campos
-      (this.nome = ""),
-        (this.carne = ""),
-        (this.pao = ""),
-        (this.opcionais = "");
+      //flash mesagem
+      if (res) {
+        this.msgType = "success";
+        this.showFlashMessage("Pedido realizado com sucesso!");
+        (this.nome = ""),
+          (this.carne = ""),
+          (this.pao = ""),
+          (this.opcionais = "");
+      }
     },
   },
   mounted() {
