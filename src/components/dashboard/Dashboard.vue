@@ -56,6 +56,13 @@
 </template>
 
 <script>
+import {
+  getPedidos,
+  getStatus,
+  deletePedido,
+  updateStatus,
+} from "@/service/apiService";
+
 import Message from "../flashMessage/Message.vue";
 import flashMessage from "@/assets/js/flashMessage";
 export default {
@@ -73,54 +80,39 @@ export default {
   },
   methods: {
     async getPedidos() {
-      const req = await fetch("http://localhost:3000/burgers");
-      const data = await req.json();
-      this.burgers = data;
-
-      //Resgatando os status
+      this.burgers = await getPedidos();
       this.getStatus();
     },
-    async getStatus() {
-      const req = await fetch("http://localhost:3000/status");
-      const data = await req.json();
-      this.status = data;
-    },
-    async deletePedidos(id) {
-      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
-        method: "DELETE",
-      });
-      const res = await req.json();
 
-//flash mesagem
+    async getStatus() {
+      this.status = await getStatus();
+    },
+
+    async deletePedidos(id) {
+      const res = await deletePedido(id);
+
+      //flash mensagem
       const messageType = res.success ? "success" : "danger";
       this.msgType = messageType;
-      
+
       this.msgType = "success";
-        this.showFlashMessage("Pedido cancelado com sucesso!");
-      
+      this.showFlashMessage("Pedido cancelado com sucesso!");
 
       this.getPedidos();
     },
+
     async updateStatus(event, id) {
       const option = event.target.value;
+      const res = await updateStatus(id, option);
 
-      const dataJson = JSON.stringify({ status: option });
-      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: dataJson,
-      });
-
-      const res = await req.json();
-
-      //flash mesagem
-      //flash mesagem
+      //flash mensagem
       const messageType = res.success ? "success" : "danger";
       this.msgType = messageType;
-      
+
       this.msgType = "success";
-        this.showFlashMessage(`Pedido Nº ${res.id} atualizado para ${res.status}!`);
-      
+      this.showFlashMessage(
+        `Pedido Nº ${res.id} atualizado para ${res.status}!`
+      );
     },
   },
   mounted() {

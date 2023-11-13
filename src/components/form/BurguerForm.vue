@@ -56,6 +56,7 @@
 </template>
 
 <script>
+import { getIngredientes, createBurger } from "@/service/apiService";
 import Message from "../flashMessage/Message.vue";
 import flashMessage from "@/assets/js/flashMessage";
 
@@ -78,9 +79,7 @@ export default {
   },
   methods: {
     async getIngredientes() {
-      const req = await fetch("http://localhost:3000/ingredientes");
-      const data = await req.json();
-
+      const data = await getIngredientes();
       this.paes = data.paes;
       this.carnes = data.carnes;
       this.opcionaisdata = data.opcionais;
@@ -88,9 +87,9 @@ export default {
     async createBurger(e) {
       e.preventDefault();
 
-      // Verifica se todos os campos estão preenchidos
+      // Verifique se todos os campos estão preenchidos
       if (!this.nome || !this.pao || !this.carne) {
-        this.msgType = "danger"; // Adicione esta linha para mensagens de perigo
+        this.msgType = "danger";
         this.showFlashMessage("Por favor, preencha todos os campos.");
         return;
       }
@@ -101,26 +100,20 @@ export default {
         opicionais: Array.from(this.opcionais),
         status: "Solicitado",
       };
-      const dataJson = JSON.stringify(data);
-      const req = await fetch("http://localhost:3000/burgers", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: dataJson,
-      });
-      const res = await req.json();
 
-      // Define o tipo de mensagem com base no sucesso ou falha da operação
+      const res = await createBurger(data);
+
       const messageType = res.success ? "success" : "danger";
       this.msgType = messageType;
 
-      //flash mesagem
+      // flash mensagem
       if (res) {
         this.msgType = "success";
         this.showFlashMessage("Pedido realizado com sucesso!");
-        (this.nome = ""),
-          (this.carne = ""),
-          (this.pao = ""),
-          (this.opcionais = "");
+        this.nome = "";
+        this.carne = "";
+        this.pao = "";
+        this.opcionais = [];
       }
     },
   },
