@@ -6,11 +6,15 @@ Bem-vindo ao Monster Burger, sua experiência personalizada de hambúrgueres art
 
 O Monster Burger é um projeto desenvolvido em Vue.js, que permite aos clientes criar seus próprios hambúrgueres escolhendo ingredientes exclusivos oferecidos pelo restaurante. O projeto consome uma API fake chamada backend, alimentada pelo JSON Server, proporcionando uma experiência interativa para os amantes de hambúrgueres.
 
+![Home](readme/home.png)
+
 ## Funcionalidades Principais
 
 - **Monte Seu Hambúrguer:** Personalize seu hambúrguer escolhendo entre uma variedade de ingredientes cuidadosamente selecionados pelo restaurante.
 
 - **Visualização em Tempo Real:** Veja as alterações no seu hambúrguer enquanto adiciona ou remove ingredientes.
+
+![Dashboard](readme/dash.png)
 
 - **API Fake Backend:** Utilizamos o JSON Server para simular um backend, permitindo uma experiência completa mesmo em ambiente de desenvolvimento.
 

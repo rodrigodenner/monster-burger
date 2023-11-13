@@ -89,5 +89,60 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "nome": "Rodrigo ",
+      "carne": "Picanha",
+      "pao": "Brioche",
+      "opicionais": [
+        "Bacon",
+        "Salame",
+        "Pepino"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "nome": "Joaão",
+      "carne": "Alcatra",
+      "pao": "Integral",
+      "opicionais": [
+        "Bacon"
+      ],
+      "status": "Solicitado",
+      "id": 2
+    },
+    {
+      "nome": "Felipe",
+      "carne": "Maminha",
+      "pao": "Aipim",
+      "opicionais": [
+        "Salame",
+        "Cheddar"
+      ],
+      "status": "Solicitado",
+      "id": 3
+    },
+    {
+      "nome": "Maria",
+      "carne": "Picanha",
+      "pao": "Pretzel",
+      "opicionais": [
+        "Tomate"
+      ],
+      "status": "Solicitado",
+      "id": 4
+    },
+    {
+      "nome": "Vicente",
+      "carne": "Alcatra",
+      "pao": "Aipim",
+      "opicionais": [
+        "Bacon",
+        "Pepino"
+      ],
+      "status": "Solicitado",
+      "id": 5
+    }
+  ]
 }
