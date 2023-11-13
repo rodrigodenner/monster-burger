@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Message :msg="msg" v-show="msg"/>
+    <Message :msg="msg" v-show="msg" />
     <form id="burger-form" method="POST" @submit="createBurger">
       <div class="input-container">
         <label for="nome">Nome do cliente:</label>
@@ -56,9 +56,12 @@
 </template>
 
 <script>
-import Message from '../flashMessage/Message.vue';
+import Message from "../flashMessage/Message.vue";
+import flashMessage from "@/assets/js/flashMessage";
+
 export default {
   components: { Message },
+  mixins: [flashMessage],
   name: "BurgerForm",
   data() {
     return {
@@ -84,6 +87,11 @@ export default {
     async createBurger(e) {
       e.preventDefault();
 
+      // Verifica se todos os campos estão preenchidos
+      if (!this.nome || !this.pao || !this.carne) {
+        this.showFlashMessage("Por favor, preencha todos os campos.");
+        return;
+      }
       const data = {
         nome: this.nome,
         carne: this.carne,
@@ -100,14 +108,13 @@ export default {
       const res = await req.json();
 
       //flash mesagem
-      this.msg = "Pedido realizado com sucesso";
-      
+
+      this.showFlashMessage("Pedido realizado com sucesso!");
       //limpar todos os campos
       (this.nome = ""),
-      (this.carne = ""),
-      (this.pao = ""),
-      (this.opcionais = ""),
-      (setTimeout(() => this.msg = "", 2000))
+        (this.carne = ""),
+        (this.pao = ""),
+        (this.opcionais = "");
     },
   },
   mounted() {

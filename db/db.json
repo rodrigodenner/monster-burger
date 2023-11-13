@@ -102,25 +102,13 @@
       "id": 1
     },
     {
-      "nome": "Vera",
-      "carne": "Maminha",
+      "nome": "João Almeida",
+      "carne": "Picanha",
       "pao": "Australiano",
       "opicionais": [
-        "Bacon"
+        "Tomate"
       ],
-      "status": "Solicitado",
-      "id": 3
-    },
-    {
-      "nome": "Geovana ",
-      "carne": "Maminha",
-      "pao": "Brioche",
-      "opicionais": [
-        "Bacon",
-        "Salame",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 4
     }
   ]

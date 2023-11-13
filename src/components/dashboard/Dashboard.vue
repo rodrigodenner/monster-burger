@@ -1,5 +1,6 @@
 <template>
   <div id="burger-table">
+    <Message :msg="msg" v-show="msg" />
     <div>
       <div id="burger-table-heading">
         <div class="order-id">#:</div>
@@ -36,7 +37,6 @@
             class="status"
             @change="updateStatus($event, burger.id)"
           >
-            <option value="">Status</option>
             <option
               v-for="statusPedido in status"
               :key="statusPedido.id"
@@ -56,13 +56,18 @@
 </template>
 
 <script>
+import Message from "../flashMessage/Message.vue";
+import flashMessage from "@/assets/js/flashMessage";
 export default {
   name: "Dashboard",
+  components: { Message },
+  mixins: [flashMessage],
   data() {
     return {
       burgers: null,
       burger_id: null,
       status: [],
+      msg: null,
     };
   },
   methods: {
@@ -84,7 +89,10 @@ export default {
         method: "DELETE",
       });
       const res = await req.json();
+
       //flash mesagem
+
+      this.showFlashMessage("Pedido deletado com sucesso!");
 
       this.getPedidos();
     },
@@ -99,7 +107,12 @@ export default {
       });
 
       const res = await req.json();
-      console.log(res);
+
+      //flash mesagem
+
+      this.showFlashMessage(
+        `Pedido Nº ${res.id} atualizado para ${res.status}!`
+      );
     },
   },
   mounted() {
