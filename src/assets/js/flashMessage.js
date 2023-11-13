@@ -7,7 +7,7 @@ export default {
   methods: {
     showFlashMessage(message) {
       this.msg = message;
-      setTimeout(() => (this.msg = ""), 2000000);
+      setTimeout(() => (this.msg = ""), 3000);
     },
   },
 };
