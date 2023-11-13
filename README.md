@@ -14,9 +14,9 @@ O Monster Burger é um projeto desenvolvido em Vue.js, que permite aos clientes 
 
 - **Visualização em Tempo Real:** Veja as alterações no seu hambúrguer enquanto adiciona ou remove ingredientes.
 
-
-
 - **API Fake Backend:** Utilizamos o JSON Server para simular um backend, permitindo uma experiência completa mesmo em ambiente de desenvolvimento.
+
+- ![Dashboard](readme/dash.png)
 
 ## Configuração do Projeto
 
